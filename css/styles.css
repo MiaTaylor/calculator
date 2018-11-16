@@ -1,0 +1,63 @@
+/* Variables */
+/* Mixins */
+/* Normalize */
+* {
+  margin: 0;
+  padding: 0; }
+
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+button {
+  flex: 0 0 25%;
+  border: 1px solid black;
+  padding: 0.25rem, 0;
+  transition: all 1s ease; }
+
+button:hover {
+  background-color: #001dff; }
+
+/* Main Styles*/
+.calculator {
+  flex: 0 0 95%; }
+
+.screen {
+  width: 100%;
+  font-size: 10em;
+  margin: 0;
+  padding: 0;
+  background-color: #000a56;
+  color: #fff;
+  border: none; }
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  transition: all 0.5s linear; }
+
+.btn-yellow {
+  background-color: #fffa00; }
+
+.btn-grey {
+  background-color: #d1d1d1;
+  color: #fff; }
+
+.btn, .btn-equal, .btn-clear {
+  font-size: 3rem; }
+
+.btn-equal {
+  background-color: #00c695; }
+
+.btn-clear {
+  background-color: #e50b16; }
+
+/*# sourceMappingURL=styles.css.map */

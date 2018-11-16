@@ -1,0 +1,108 @@
+/* Variables */
+
+$font-color: #fff;
+$font-size: 10em;
+$background-primary: #000a56;
+$button-color1: #fffa00;
+$button-color2: #d1d1d1;
+
+/* Mixins */
+
+@mixin margin-padding($m-direction, $m-amount, $p-direction, $p-amount) {
+  @if $m-direction == all {
+    margin: $m-amount;
+  } @else {
+    margin-#{$m-direction}: $m-amount;
+  }
+  @if $p-direction == all {
+    padding: $p-amount;
+  } @else {
+    padding-#{$p-direction}: $p-amount;
+  }
+}
+
+@mixin box-sizing($box-model) {
+    -webkit-box-sizing: $box-model; // Safari <= 5
+    -moz-box-sizing: $box-model; // Firefox <= 19
+    box-sizing: $box-model;
+}
+
+@mixin center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin flex-transition {
+    display: flex;
+    flex-wrap: wrap;
+    transition: all 0.5s linear;
+}
+
+/* Normalize */
+
+* {
+    @include margin-padding(all, 0, all, 0);
+}
+
+
+*:after,
+*:before {
+  @include box-sizing(border-box);
+}
+
+body {
+    min-height: 100vh;
+    @include center;
+}
+
+button {
+    flex: 0 0 25%;
+    border: 1px solid black;
+    padding: 0.25rem, 0;
+    transition: all 1s ease;
+}
+
+button:hover {
+    background-color: #001dff;
+}
+
+/* Main Styles*/
+
+.calculator {
+    flex: 0 0 95%;
+}
+
+.screen {
+    width: 100%;
+    font-size: $font-size;
+    @include margin-padding(all, 0, all, 0);
+    background-color: $background-primary;
+    color: $font-color;
+    border: none;
+}
+
+.buttons {
+    @include flex-transition;
+}
+
+.btn-yellow {
+    background-color: $button-color1;
+}
+
+.btn-grey {
+    background-color: $button-color2;
+    color: $font-color;
+}
+
+.btn, .btn-equal, .btn-clear {
+    font-size: 3rem;
+}
+
+.btn-equal {
+    background-color: #00c695;
+}
+
+.btn-clear {
+    background-color: #e50b16;
+}
